@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div>
     <h1>{{ msg }}</h1>
     <form action class="form" @submit.prevent="login">
       <label class="form-label" for="#user">Usuario:</label>
@@ -33,7 +33,7 @@ export default {
         this.password = '';
         console.log(response.data);
         this.$session.set("token", response.data);
-        this.$router.push("/About");
+        this.$router.push("/Dashboard");
       } catch (error) {
         this.error = true;
         console.log(error);
