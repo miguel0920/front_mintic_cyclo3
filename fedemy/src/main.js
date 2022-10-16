@@ -2,6 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+import VueSimpleAlert from "vue-simple-alert";
 import axios from 'axios';
 import VueSessionStorage from "vue-sessionstorage";
 
@@ -9,6 +10,7 @@ import VueSessionStorage from "vue-sessionstorage";
 Vue.use(VueSessionStorage);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(VueSimpleAlert);
 Vue.use(axios);
 Vue.config.productionTip = false;
 

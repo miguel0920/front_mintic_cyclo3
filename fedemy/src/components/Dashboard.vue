@@ -1,13 +1,11 @@
 <template>
   <div>
-    <div>
-      <b-button variant="link" @click="userLogged()">Cerra sesión</b-button>
-    </div>
+    <!-- <CustomSpinner :active="loaderActive" message="Por favor espere unos segundos." /> -->
     <b-container class="bv-example-row">
       <b-row>
         <b-col>
           <b-img thumbnail center fluid :src="require('../assets/users.png')" alt="users">1</b-img>
-          <b-button pill size="lg">Usuarios</b-button>
+          <b-button pill size="lg" @click="users()">Usuarios</b-button>
         </b-col>
         <b-col>
           <b-img thumbnail center fluid :src="require('../assets/packages.png')" alt="packages">2</b-img>
@@ -23,18 +21,27 @@
 </template>
 
 <script>
+// import CustomSpinner from '@/components/CustomSpinner.vue';
+import loaderMixin from '@/mixins/loading';
+
 export default {
   name: 'DashboardComponent',
-  props: {},
-  data: () => ({
-    user: "",
-    password: "",
-    error: false
-  }),
+  components: {
+    // CustomSpinner
+  },
+  mixins: [loaderMixin],
   methods: {
     userLogged() {
       this.$session.remove("token");
       this.$router.push("/");
+    },
+    users() {
+      this.showLoader();
+      setTimeout(() => {
+        this.$router.push("/users");
+        this.hideLoader();
+      }, 1000);
+
     }
   }
 }
@@ -42,8 +49,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.btn-link {
-  font-weight: 600;
-  font-size: 25px;
-}
+
 </style>

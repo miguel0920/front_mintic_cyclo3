@@ -2,6 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import DashboardView from '../views/DashboardView';
+import UsersView from '../views/UsersView';
+import CreateUserView from '../views/CreateUserView';
+import UpdateUserView from '../views/UpdateUserView';
 
 Vue.use(VueRouter);
 
@@ -12,13 +15,25 @@ const routes = [{
     },
     {
         path: '/Dashboard',
-        name: 'bashboard',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
+        name: 'dashboard',
         component: DashboardView
+    },
+    {
+        path: '/Users',
+        name: 'users',
+        component: UsersView
+    },
+    {
+        path: '/CreateUser',
+        name: 'createuser',
+        component: CreateUserView
+    },
+    {
+        path: '/UpdateUser/:id?',
+        name: 'updateuser',
+        component: UpdateUserView
     }
-]
+];
 
 const router = new VueRouter({
     mode: 'history',

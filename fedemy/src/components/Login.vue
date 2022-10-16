@@ -8,13 +8,13 @@
       <input class="form-input" type="password" id="password" placeholder="Contraseña" autocomplete="off"
         v-model="password">
       <p v-if="error" class="error">Usuario o contraseña incorrecta.</p>
-      <input class="form-submit" type="submit" value="Inicias sesión">
+      <input class="form-submit" type="submit" value="Iniciar sesión">
     </form>
   </div>
 </template>
 
 <script>
-import auth from "@/services/auth";
+import auth from "@/services/serviceApi";
 export default {
   name: 'LoginComponent',
   props: {
@@ -31,7 +31,6 @@ export default {
         const response = await auth.login(this.user, this.password);
         this.user = '';
         this.password = '';
-        console.log(response.data);
         this.$session.set("token", response.data);
         this.$router.push("/Dashboard");
       } catch (error) {
