@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ENDPOINT_PATH = "https://backendfedemy.herokuapp.com/api/";
+const ENDPOINT_PATH = "https://backendfedemy.herokuapp.com/";
 
 export default {
     login(username, password) {
