@@ -4,6 +4,10 @@
     "private": true,
     "postinstall": "npm run build",
     "start": "node server.js",
+    "engines": {
+        "node": "16.18.0",
+        "npm": "8.19.2"
+    },
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
