@@ -3,12 +3,12 @@
     "version": "0.1.0",
     "private": true,
     "postinstall": "npm run build",
-    "start": "node server.js",
     "engines": {
         "node": "16.18.0",
         "npm": "8.19.2"
     },
     "scripts": {
+        "start": "node server.js",
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build --prod",
         "lint": "vue-cli-service lint"
