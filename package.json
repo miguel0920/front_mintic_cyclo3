@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "postinstall": "npm run build",
-    "start": "node server.js",
+    "start": "node src/server.js",
     "engines": {
         "node": "16.18.0",
         "npm": "8.19.2"
