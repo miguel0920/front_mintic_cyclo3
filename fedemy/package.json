@@ -2,6 +2,8 @@
     "name": "fedemy",
     "version": "0.1.0",
     "private": true,
+    "postinstall": "npm run build",
+    "start": "node server.js",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
@@ -11,7 +13,9 @@
         "axios": "^0.27.2",
         "bootstrap-vue": "^2.22.0",
         "core-js": "^3.8.3",
+        "express": "^4.18.2",
         "nprogress": "^0.2.0",
+        "serve-static": "^1.15.0",
         "vue": "^2.6.14",
         "vue-router": "^3.5.1",
         "vue-sessionstorage": "^1.0.0",
