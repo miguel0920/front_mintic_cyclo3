@@ -7,7 +7,7 @@
     "npm": "8.8.0"
   },
   "scripts": {
-    "postinstall": "npm run build",
+    "postinstall": "ng build --aot --prod",
     "start": "node server.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

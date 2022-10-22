@@ -8,4 +8,6 @@ res.sendFile(path.join(__dirname + '/dist/fedemy/index.html'));
 
 });
 
+console.log('Miguel 2');
+
 app.listen(process.env.PORT || 8080);
