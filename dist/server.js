@@ -23,5 +23,7 @@ app.set('view engine', 'pug');
 app.use(serveStatic(path.join(__dirname, '/')));
 //Return the index for any other GET request
 app.get('/*', function (req, res) {
-    res.sendFile('index.html', {root: path.join(__dirname, '/')});
+    // res.sendFile('index.html', {root: path.join(__dirname, '/')});
+    const index = path.join(__dirname, 'build', 'index.html');
+    res.sendFile(index);
 });
