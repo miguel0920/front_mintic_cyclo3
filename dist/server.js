@@ -40,8 +40,8 @@ process.env.PWD = process.cwd();
 app.use(express.static(process.env.PWD + '/build'));
 
 app.get('*', function (req, res) {
-    const index = path.join(__dirname, 'build', 'index.html');
-    res.sendFile(index);
+    // const index = path.join(__dirname, 'build', 'index.html');
+    res.sendFile('./index.html');
 });
 
 app.listen(port);
